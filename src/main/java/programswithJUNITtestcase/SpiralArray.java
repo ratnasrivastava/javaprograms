@@ -18,13 +18,13 @@ public class SpiralArray {
         try {
             int row = Integer.parseInt(bufferedReader.readLine());
             int col = Integer.parseInt(bufferedReader.readLine());
-            String[][] matrix = new String[row][col];
+            int[][] matrix = new int[row][col];
             for (int i = 0; i < row; i++) {
                 for (int j = 0; j < col; j++) {
-                    matrix[i][j] = bufferedReader.readLine();
+                    matrix[i][j] = Integer.parseInt(bufferedReader.readLine());
                 }
             }
-            String result[] = spiralArray(matrix);
+            int result[] = spiralArray(matrix);
             for (int i = 0; i < result.length; i++) {
                 System.out.print(result[i] + " ");
             }
@@ -33,9 +33,9 @@ public class SpiralArray {
         }
     }
 
-    public static String[] spiralArray(String[][] matrix) {
+    public static int[] spiralArray(int[][] matrix) {
         Direction direction = Direction.LEFT_RIGHT;
-        String output[] = new String[matrix.length * matrix[0].length];
+        int output[] = new int[matrix.length * matrix[0].length];
         int rowindex[] = {0, matrix.length - 1};
         int colIndex[] = {0, matrix[0].length - 1};
         int currIndex = 0;
